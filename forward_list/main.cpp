@@ -12,8 +12,9 @@
 #include <vector>
 #include <array>
 
-void display(std::forward_list<int>& lst){
-    for(std::forward_list<int>::iterator it = lst.begin(); it != lst.end(); it++ ){
+template <class T>
+void display(T& lst){
+    for(typename T::iterator it = lst.begin(); it != lst.end(); it++ ){
         std::cout << *it << ", ";
     }
     std::cout << "\n";
@@ -46,8 +47,13 @@ int main(int argc, const char * argv[]) {
     lst.erase_after(it, lst.end());
     display(lst);
     
+    std::array<int, 8> learn_arr;
     
+    learn_arr.fill(0);
+    display(learn_arr);
     
+    learn_arr.at(3) = 50;
+    display(learn_arr);
     
     return 0;
 }

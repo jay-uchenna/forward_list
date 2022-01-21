@@ -55,5 +55,13 @@ int main(int argc, const char * argv[]) {
     learn_arr.at(3) = 50;
     display(learn_arr);
     
+    char love[10] = {'*'};
+    int arrSize = sizeof(love)/sizeof(love[0]);
+    for(int i = 0 ; i < arrSize; i++) {
+        std::cout << love[i] << " " ;
+    }
+    
+    std::cout << "\n";
+    
     return 0;
 }
